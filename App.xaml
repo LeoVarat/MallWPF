@@ -1,0 +1,23 @@
+﻿<Application x:Class="WpfApp1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfApp1"
+             xmlns:view="clr-namespace:WpfApp1.Views"
+             xmlns:viewModel="clr-namespace:WpfApp1.Models.ViewModels"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/MenuItemTemplate.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:UserViewModel}">
+                <view:UserView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:NewUserViewModel}">
+                <view:NewUserView />
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
